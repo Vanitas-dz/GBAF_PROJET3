@@ -47,3 +47,21 @@ h1
     
     background-color: grey;
 }
+@media screen and (max-device-width :768px){
+
+    .block_modif
+{
+    background-color: white;
+    border:  black 1px ;
+    border-radius: 20px;
+    width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 50px;
+   
+}
+    body{
+        width: 820px;
+    }
+
+}

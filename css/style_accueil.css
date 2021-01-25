@@ -147,11 +147,51 @@ p{
 
 }
 
-@media all and (max-width :1024px){
+@media screen and (max-device-width :768px){
     
-    .a1{
+    .block_page{
     text-decoration: none;
-    position: relative;
-    right: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
     }
+
+    
+    .bloc_header{
+    width: 400px;
+    border: 1px solid black;
+    margin: 50px auto;
+    }
+    body{
+        margin-right: auto;
+    
+        
+    }
+}
+
+@media screen and (max-device-width :428px){
+    
+    .block_page{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    
+    }
+
+    
+    .bloc_header{
+    width: auto;
+    border: 1px solid black;
+    margin: 50px auto;
+    }
+    body{
+        margin-right: auto;
+    
+        
+    }
+
 }

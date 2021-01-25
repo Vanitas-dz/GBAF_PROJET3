@@ -67,7 +67,7 @@
         <h1>commentaires</h1>
         <div class= comments>
             <form action="" method='POST'>
-                <textarea name="content" placeholder="Votre commentaire"></textarea>
+                <textarea name="content" placeholder="Votre commentaire" ></textarea>
                 <br>
                 <input type="submit" name="submit" value="Envoyer">
                 </form>
