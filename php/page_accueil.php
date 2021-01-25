@@ -2,7 +2,7 @@
     session_start();
     
     $bdd = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    
+    // recupere les infos acteurs dans la base de donnée
     $acteurs = $bdd->prepare("SELECT * FROM acteurs");
     $acteurs->execute();
      
@@ -47,7 +47,7 @@
 
         <h2 class='titreh2'> Nos partenaires </h2>
         <?php
-        foreach($acteurs as $acteur){
+        foreach($acteurs as $acteur){ // requete pour afficher tous les acteurs de la base de donnée
         ?>
         <div class='forma_co' >
         <h2><?php echo $acteur['titre'];?></h2>

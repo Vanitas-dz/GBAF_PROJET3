@@ -41,7 +41,7 @@ if(isset($_POST['forminscription']))
                                     {
                                         $req = $bdd->prepare('INSERT INTO membres(nom, prenom, username, mail, motdepasse, question, reponse) VALUES(?, ?, ?, ?, ?, ?, ?)');
                                         $req->execute(array($nom, $prenom, $username, $mail,$pass_hash, $question, $reponse));
-                                        $erreur = 'Votre compte a bien été créer';
+                                        $msg = "<span style=' color:green'>Votre compte a bien été créer<span>";
                                         
                                     }
                                     else
@@ -206,6 +206,12 @@ if(isset($_POST['forminscription']))
          if(isset($erreur))
          {
              echo $erreur;
+         }
+        ?>
+        <?php 
+         if(isset($msg))
+         {
+             echo $msg;
          }
         ?>
         <br>

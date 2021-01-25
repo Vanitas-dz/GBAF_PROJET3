@@ -3,22 +3,23 @@
     if(isset($_GET['id'])){
 
     $bdd = new PDO('mysql:host=localhost;dbname=login;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-    
+    // requete pour recuperer les donnée acteurs
     $acteurs = $bdd->prepare("SELECT * FROM acteurs WHERE id =? ");
     $acteurs->execute(array($_GET['id']));
     $acteur = $acteurs->fetch();
     $acteurs->closeCursor();
         
-     
+    // requete pour inserer un commentaire en fonction de l'utilisateur
     if(isset($_SESSION['id']) AND isset($_POST['content']) AND isset($_POST['submit'])) {
         
         $reqcomments = $bdd->prepare('SELECT * FROM commentaire WHERE id_user= ? AND id_acteurs= ?');
         $reqcomments->execute(array($_SESSION['id'],$_GET['id']));
-        $commentexist = $reqcomments->fetch();
-        if($commentexist == 0){
+        $commentexist = $reqcomments->fetch(); // requete pour savoir si l'utilisateur a deja commenter
+        if($commentexist == 0){  
 
             $comments = $bdd->prepare('INSERT INTO commentaire (id_user, id_acteurs, content) VALUES(?, ?, ?)');
-            $comments->execute(array($_SESSION['id'],$_GET['id'], $_POST['content'])); 
+            $comments->execute(array($_SESSION['id'],$_GET['id'], $_POST['content']));
+            $msg = "<span style=' color:green;'>Votre commentaire a bien été créer<span>";
         }
         else{
             $erreur = "Vous avez déja commenté l'acteur";
@@ -26,7 +27,7 @@
         
     }
 
-
+    // requete pour compter le nombre de like et dislike par rapport a chaque utlisateur
     $likes = $bdd->prepare('SELECT COUNT(id) FROM likes ');
     $likes->execute();
     $like = $likes->fetch();
@@ -53,14 +54,16 @@
     </head>
     <body>
         <header><?php include('header_gbaf.php')  ?></header>
-    
+
+        <!-- afficher données acteur-->
         <div class='forma_co' >
         <div class= 'acteur'>
             <h2><?php echo $acteur['titre'];?></h2>
             <img src="<?php echo $acteur['image'];?>" />
             <p><?php echo $acteur['contenu'];?></p>
 
-            <a href="vote.php?t=1&id=<?php echo $_GET['id']; ?>"> J'aime (<?php echo $like[0]; ?>) </a> 
+            <!-- affichage like/dislike des acteurs-->
+            <a href="vote.php?t=1&id=<?php echo $_GET['id']; ?>">J'aime (<?php echo $like[0]; ?>) </a> 
             <a href="vote.php?t=2&id=<?php echo $_GET['id']; ?>"> Je n'aime pas (<?php echo $dislike[0]; ?>) </a> 
         </div>
         <div>
@@ -71,9 +74,10 @@
                 <br>
                 <input type="submit" name="submit" value="Envoyer">
                 </form>
+                <?php if(isset($msg)){ echo $msg;}?>
                 <?php if(isset($erreur)){ echo $erreur; } ?>
                 
-                
+            <!-- recuperation des commentaires en fonction de l'utilisateur-->
                 <?php
                 $reponse = $bdd->prepare('SELECT * 
                 FROM commentaire

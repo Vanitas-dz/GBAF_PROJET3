@@ -42,7 +42,6 @@ body
 }
 textarea{
     width: 90%;
-    height: 100px;
 }
 .comments{
     
@@ -55,6 +54,7 @@ textarea{
     margin-bottom: 5px;
     width: 50%;
     margin-left: 400px;
+    color: black;
     
 
 }

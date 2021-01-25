@@ -69,6 +69,7 @@ if (isset($_POST['newpassword']) AND !empty($_POST['newpassword']) AND  isset($_
     <body>
     <div class='block_page'>
     <img src ="../img/gbaf.png" alt='image'>
+    <p class=txt>Le Groupement Banque Assurance Français</p>
     
             <?php
             if (!isset($question)) {
