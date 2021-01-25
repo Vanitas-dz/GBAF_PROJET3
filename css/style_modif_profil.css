@@ -1,0 +1,49 @@
+body
+{
+    background-color: rgba(114, 142, 150, 0.562);
+}
+
+.block_modif
+{
+    background-color: white;
+    border:  black 1px ;
+    border-radius: 20px;
+    width: 500px;
+    margin: 80px auto;
+    padding: 50px;
+   
+}
+img
+{
+    width: 200px;
+    height: 230px;
+    margin-left: 150px;
+}
+
+p
+{
+text-align: center;
+}
+hr
+{
+    margin: 30px auto;
+    
+}
+
+input{
+    margin: 20px auto;
+    border: none;
+    border-bottom: 2px solid gray;
+}
+h1
+{
+    text-align: center;
+}
+.ajour
+{
+    border: none;
+    position: relative;
+    left: 79%;
+    
+    background-color: grey;
+}

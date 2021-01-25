@@ -1,0 +1,108 @@
+/* Page de connexion style */
+
+body
+{
+    background-color: rgba(114, 142, 150, 0.562);
+    
+    
+}
+
+
+.block_connexion
+{
+    background-color: white;
+    border:  black 1px ;
+    border-radius: 20px;
+    width: 500px;
+    margin: 120px auto;
+    padding: 50px;
+}    
+input 
+{   
+    border: none;
+    border-bottom: 2px solid gray;
+    margin: 10px auto;
+    
+
+}
+
+img
+{
+    width: 200px;
+    height: 200px;
+    margin-left: 150px;
+}
+.txt
+{
+    text-align: center;
+ 
+    
+    
+}
+hr
+{
+    margin: 30px auto;
+    
+}
+.connecter
+{
+    border: none;
+    border: solid 2px black;
+    position: relative;
+    left: 80%;
+    margin-top: 20px;
+    background-color:  rgb(151, 132, 132);
+    color: white;
+}
+
+@media screen and (max-width :480px){
+   
+.block_connexion
+{
+    background-color: white;
+    border:  black 1px ;
+    border-radius: 20px;
+    width: 500px;
+    margin: 120px auto;
+    padding: 50px;
+    margin-right: 10px;
+}    
+input 
+{   
+    border: none;
+    border-bottom: 2px solid gray;
+    margin: 10px auto;
+    
+
+}
+
+img
+{
+    width: 200px;
+    height: 200px;
+    margin-left: 150px;
+}
+.txt
+{
+    text-align: center;
+ 
+    
+    
+}
+hr
+{
+    margin: 30px auto;
+    
+}
+.connecter
+{
+    
+    border: solid 2px black;
+    position: relative;
+    left: 80%;
+    margin-top: 20px;
+    background-color:  rgb(151, 132, 132);
+    color: white;
+}
+
+}
