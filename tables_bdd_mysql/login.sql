@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : lun. 25 jan. 2021 à 14:59
+-- Généré le : mar. 26 jan. 2021 à 07:54
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -60,14 +60,15 @@ CREATE TABLE IF NOT EXISTS `commentaire` (
   `content` text NOT NULL,
   `date_creation` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `commentaire`
 --
 
 INSERT INTO `commentaire` (`id`, `id_user`, `id_acteurs`, `content`, `date_creation`) VALUES
-(79, 17, 1, 'J\'ai commenté ici!!', '2021-01-25 15:48:46');
+(80, 17, 1, 'Salut', '2021-01-25 17:12:40'),
+(81, 18, 1, 'j\'ai commenté ici !!', '2021-01-26 08:31:43');
 
 -- --------------------------------------------------------
 
@@ -77,11 +78,11 @@ INSERT INTO `commentaire` (`id`, `id_user`, `id_acteurs`, `content`, `date_creat
 
 DROP TABLE IF EXISTS `dislikes`;
 CREATE TABLE IF NOT EXISTS `dislikes` (
-  `id` int(11) NOT NULL DEFAULT '1',
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_acteurs` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `dislikes`
@@ -102,13 +103,14 @@ CREATE TABLE IF NOT EXISTS `likes` (
   `id_acteurs` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=134 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=152 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `likes`
 --
 
 INSERT INTO `likes` (`id`, `id_acteurs`, `id_user`) VALUES
+(151, 1, 18),
 (133, 1, 16);
 
 -- --------------------------------------------------------
@@ -137,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `membres` (
 INSERT INTO `membres` (`id_user`, `nom`, `prenom`, `username`, `mail`, `motdepasse`, `question`, `reponse`) VALUES
 (16, 'White', 'Black', 'User2', 'White5670@gmail.com', '$2y$10$WsBnyDtqMn2IgHkg.HhQNeomm0MpJSINFGfr5v2MbHSRK4Jba1qNK', 'Le nom de votre superhero prÃ©fÃ©res ?', 'je sais pas'),
 (17, 'Roger', 'Ford', 'User1', 'Roger@gmail.com', '$2y$10$u7YEtwkYg2G9C7XCbM9ZAuzO3dQtWXxbC2DrNJFmNR6DDsQ08Yfji', 'Le nom de votre Pays ?', 'France'),
-(18, 'Paul', 'Mathias', 'User3', 'Paul01@gmail.com', '$2y$10$493nV9qVIJY0.DLIvu31teWEg9MS4MebZMPDO2jkwbtyuY4Bg7oT.', 'Le nom de votre professeur prÃ©fÃ©rÃ© ? ?', 'GTO'),
+(18, 'Paul', 'Mathias', 'User3', 'Paul01@gmail.com', '$2y$10$x70A4hE3V97wxxZUedsjk..TrgLapFdIjTuTw9L/aF48YbJgizFEa', 'Le nom de votre professeur prÃ©fÃ©rÃ© ? ?', 'GTO'),
 (19, 'Rennes', 'Amandine', 'User4', 'Amandine04@gmail.com', '$2y$10$67QLgi8IAJqwyeU/8HY5AOXdLt3nwuc7lvYEshoA.6ygF5zlRFcKC', 'Le nom de votre superhero prÃ©fÃ©res ?', 'sangoku');
 COMMIT;
 
