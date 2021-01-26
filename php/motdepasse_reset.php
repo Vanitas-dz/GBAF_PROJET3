@@ -1,15 +1,15 @@
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=login', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-if (isset($_POST['valider']) AND isset($_POST['username'])){
+if (isset($_POST['valider']) AND isset($_POST['username'])){ // definir les variables
     
-    if (!empty($_POST['username'])){
-        
+    if (!empty($_POST['username'])){  // username ne doit pas etre vide
+        // recupere infos username, question, reponse dans la table membres en fonction de l'username qu'on va entré
         $username = htmlspecialchars($_POST['username']);
         $requete_User = $bdd->prepare("SELECT username, question, reponse FROM membres WHERE username = ?");
         $requete_User->execute(array($_POST['username']));
         $req = $requete_User->fetch();
-        $question = $req['question'];
+        $question = $req['question']; // on recupere la question en fonction de l'utilisateur demandé
     }
     else{
         
@@ -17,15 +17,15 @@ if (isset($_POST['valider']) AND isset($_POST['username'])){
     }
 }
 
-if (isset($_POST['valider']) AND isset($_POST['reponse'])){
+if (isset($_POST['valider']) AND isset($_POST['reponse'])){ // definir les variables pour le deuxième champ question
     
     if (!empty($_POST['reponse'])){
         
-        $req = $bdd->prepare('SELECT * FROM membres WHERE username = ?');
+        $req = $bdd->prepare('SELECT * FROM membres WHERE username = ?'); // recupere infos de l'username demandé
         $req->execute(array($_POST['username']));
         $reponse = $req->fetch();
         
-        if (trim($_POST['reponse']) === $reponse['reponse']) {
+        if (trim($_POST['reponse']) === $reponse['reponse']) { // si la reponse correspond a la reponse de la tables membres
             $reponsetrue = true;
         
         }

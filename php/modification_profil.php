@@ -3,9 +3,9 @@ session_start();
 
 $bdd = new PDO('mysql:host=localhost;dbname=login', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-if(isset($_SESSION['id'])) 
+if(isset($_SESSION['id'])) // savoir si une variable existe
 {
-    $requser = $bdd->prepare("SELECT * FROM membres WHERE id_user = ?");
+    $requser = $bdd->prepare("SELECT * FROM membres WHERE id_user = ?"); // recuperer tous les info de l'user en fonction de session id
     $requser->execute(array($_SESSION['id']));
     $user = $requser->fetch();
     

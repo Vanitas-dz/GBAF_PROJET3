@@ -1,14 +1,14 @@
 <?php
 $bdd = new PDO('mysql:host=localhost;dbname=login', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-if(isset($_POST['forminscription']))
+if(isset($_POST['forminscription'])) // declarer la variable valider
 {
 
     if(isset($_POST['nom']) AND isset($_POST['prenom']) AND isset($_POST['username']) AND isset($_POST['mail']) AND isset($_POST['mail2']) AND isset($_POST['password']) AND isset($_POST['password_confirm']) AND isset($_POST['question']) AND isset($_POST['reponse']))
-    {
+    { // declarer les variables 
          
         if(!empty($_POST['nom']) AND !empty($_POST['prenom'])AND !empty($_POST['username']) AND !empty($_POST['mail']) AND !empty($_POST['mail2']) AND !empty($_POST['password']) AND !empty($_POST['password_confirm'])AND !empty($_POST['question']) AND !empty($_POST['reponse']))
-        {
+        { // tous les champs de doivent pas etre vide
             $nom=trim(htmlspecialchars($_POST['nom']));
             $prenom=trim(htmlspecialchars($_POST['prenom']));
             $username=trim(htmlspecialchars($_POST['username']));
@@ -21,7 +21,7 @@ if(isset($_POST['forminscription']))
             $reponse=trim(htmlspecialchars($_POST['reponse']));
 
 
-            
+            // condition pour crée son compte 
             if (strlen($nom) >= 3 AND strlen($prenom) <=255)
             {
                 if (strlen($prenom) >= 3 AND strlen($prenom) <=255)

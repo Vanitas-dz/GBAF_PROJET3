@@ -28,12 +28,12 @@
     }
 
     // requete pour compter le nombre de like et dislike par rapport a chaque utlisateur
-    $likes = $bdd->prepare('SELECT COUNT(id) FROM likes ');
-    $likes->execute();
+    $likes = $bdd->prepare('SELECT COUNT(id) FROM likes WHERE id_acteurs= ?');
+    $likes->execute(array($_GET['id']));
     $like = $likes->fetch();
     
-    $dislikes = $bdd->prepare('SELECT COUNT(id) FROM dislikes ');
-    $dislikes->execute();
+    $dislikes = $bdd->prepare('SELECT COUNT(id) FROM dislikes WHERE id_acteurs= ? ');
+    $dislikes->execute(array($_GET['id']));
     $dislike = $dislikes->fetch();
     
 

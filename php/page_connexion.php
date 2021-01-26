@@ -5,20 +5,20 @@ $bdd = new PDO('mysql:host=localhost;dbname=login', 'root', '', array(PDO::ATTR_
 
 if(isset($_POST['connecter']))
 {
-    if(isset($_POST['username']) AND isset($_POST['password']))
+    if(isset($_POST['username']) AND isset($_POST['password'])) // déclarer la demande (variables)
     {
-        if(!empty($_POST['username']) AND !empty($_POST['password']))
+        if(!empty($_POST['username']) AND !empty($_POST['password']))  // tous les champs remplis
         {
             $username=trim(htmlspecialchars($_POST['username']));
            
             $password=$_POST['password'];
             
 
-            $requser = $bdd->prepare("SELECT * FROM membres WHERE username = ? ");
+            $requser = $bdd->prepare("SELECT * FROM membres WHERE username = ? "); // recuperer les infos de l'user en fonction de l'username
             $requser->execute(array($username));
             $resultat = $requser->fetch();
-            $verifpass = password_verify($password,$resultat['motdepasse']);
-            if($verifpass == true)
+            $verifpass = password_verify($password,$resultat['motdepasse']);  // on recupere le mdp de l'utilisateur
+            if($verifpass == true) // si le mdp entrée est = au mdp de la base de donnée
             {
                 $_SESSION['id'] = $resultat['id_user'];
                 $_SESSION['nom'] = $resultat['nom'];
@@ -26,7 +26,7 @@ if(isset($_POST['connecter']))
                 $_SESSION['username'] = $resultat['username'];
                 $_SESSION['mail'] = $resultat['mail'];
                 echo ' Vous êtes connecté !';
-                header('Location: page_accueil.php?id=' . $_SESSION['id']);
+                header('Location: page_accueil.php?id=' . $_SESSION['id']); // redirection page d'acceuil
             }
             else
             {

@@ -3,10 +3,10 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=login', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-if(isset($_SESSION['id']))
+if(isset($_SESSION['id'])) // declarer le session id pour se connecter
 {
     $getid = intval($_SESSION['id']);
-    $requser = $bdd->prepare('SELECT * FROM membres WHERE id_user = ?');
+    $requser = $bdd->prepare('SELECT * FROM membres WHERE id_user = ?'); // recuperer son id pour se connecter
     $requser->execute(array($getid));
     $resultat = $requser->fetch();
 

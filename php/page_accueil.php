@@ -54,7 +54,7 @@
         <img src="<?php echo $acteur['image'];?>" />
         <p><?php echo $acteur['contenu'];?></p>
         <div class="lien">
-        <p class =a1><a href =<?php echo "page_acteur.php?id=" .  $acteur['id']; ?>>Plus d'informations</a></p>
+        <p class =a1><a href =<?php echo "page_acteur.php?id=" .  $acteur['id']; ?>>Afficher la suite</a></p>
         </div>
         </div>
         <?php
