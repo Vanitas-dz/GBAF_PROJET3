@@ -156,6 +156,14 @@ p{
     align-items: center;
     width: auto;
     }
+    .forma_co 
+    {
+        border: black 2px solid;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        padding-top: 20px;
+        width: auto;
+    }
 
     
     .bloc_header{
@@ -190,8 +198,27 @@ p{
     }
     body{
         margin-right: auto;
+       
     
         
     }
+    .forma_co 
+{
+    border: black 2px solid;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-top: 20px;
+    width: auto;
+}
+    .forma_co a
+{
+    width: auto;
+    position: relative;
+    right: 70px;
+    
+   
+}
+
+
 
 }

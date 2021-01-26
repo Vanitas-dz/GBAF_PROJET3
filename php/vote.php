@@ -23,6 +23,9 @@ if(isset($_GET['t'],$_GET['id'], $_SESSION['id']) AND !empty($_GET['t']) AND !em
     }else{
         $ins = $bdd->prepare('INSERT INTO likes (id_acteurs, id_user) VALUES (?,?)');
         $ins->execute(array($getid, $_SESSION['id']));
+        
+        
+            
     }
         }elseif($gett == 2) {
             $check_like= $bdd->prepare('SELECT * FROM dislikes WHERE  id_acteurs = ? AND id_user= ?');
@@ -38,8 +41,11 @@ if(isset($_GET['t'],$_GET['id'], $_SESSION['id']) AND !empty($_GET['t']) AND !em
         }else{
             $ins = $bdd->prepare('INSERT INTO dislikes (id_acteurs, id_user) VALUES (?,?)');
             $ins->execute(array($getid, $_SESSION['id']));
+            
         }
+    
     }
+    
     
     header('Location: page_acteur.php?id='.$getid);
 }   

@@ -31,10 +31,11 @@
     $likes = $bdd->prepare('SELECT COUNT(id) FROM likes ');
     $likes->execute();
     $like = $likes->fetch();
-
+    
     $dislikes = $bdd->prepare('SELECT COUNT(id) FROM dislikes ');
     $dislikes->execute();
     $dislike = $dislikes->fetch();
+    
 
    
   
@@ -64,7 +65,8 @@
 
             <!-- affichage like/dislike des acteurs-->
             <a href="vote.php?t=1&id=<?php echo $_GET['id']; ?>">J'aime (<?php echo $like[0]; ?>) </a> 
-            <a href="vote.php?t=2&id=<?php echo $_GET['id']; ?>"> Je n'aime pas (<?php echo $dislike[0]; ?>) </a> 
+            <a href="vote.php?t=2&id=<?php echo $_GET['id']; ?>"> Je n'aime pas (<?php echo $dislike[0]; ?>) </a>
+            
         </div>
         <div>
         <h1>commentaires</h1>
