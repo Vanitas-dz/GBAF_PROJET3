@@ -22,7 +22,7 @@
             $msg = "<span style=' color:green;'>Votre commentaire a bien été créer<span>";
         }
         else{
-            $erreur = "Vous avez déja commenté l'acteur";
+            $erreur = "<span style=' color:red;'>Vous avez déja commenté cet acteur <span>";
         }
         
     }
@@ -52,6 +52,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Page acteur</title>
         <link rel="stylesheet" href="../css/style_acteur.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     </head>
     <body>
         <header><?php include('header_gbaf.php')  ?></header>
@@ -64,8 +65,8 @@
             <p><?php echo $acteur['contenu'];?></p>
 
             <!-- affichage like/dislike des acteurs-->
-            <a href="vote.php?t=1&id=<?php echo $_GET['id']; ?>">J'aime (<?php echo $like[0]; ?>) </a> 
-            <a href="vote.php?t=2&id=<?php echo $_GET['id']; ?>"> Je n'aime pas (<?php echo $dislike[0]; ?>) </a>
+            <a href="vote.php?t=1&id=<?php echo $_GET['id']; ?>"><i class="fas fa-thumbs-up" style="color:green;"></i> (<?php echo $like[0]; ?>) </a> 
+            <a href="vote.php?t=2&id=<?php echo $_GET['id']; ?>"> <i class="fas fa-thumbs-down" style="color:red;"></i> (<?php echo $dislike[0]; ?>) </a>
             
         </div>
         <div>
@@ -87,13 +88,13 @@
                 ON commentaire.id_user = membres.id_user
                 WHERE id_acteurs= ? 
                 ORDER BY id 
-                DESC LIMIT 0, 5');
+                DESC LIMIT 0, 10');
                 
                 $rep=$reponse->execute(array($_GET['id'],));
     
                 while($donnees = $reponse->fetch())
                 {
-                    echo '<div class= message> <p><strong>' . htmlspecialchars($donnees['nom']) . " " . htmlspecialchars($donnees['prenom']) .  '</strong> : ' . htmlspecialchars($donnees['date_creation']) . " <br><br> " . htmlspecialchars($donnees['content']) .  '</p></div>' ;
+                    echo '<div class= message> <p><strong>' . htmlspecialchars($donnees['nom']) . " " . htmlspecialchars($donnees['prenom']) .  '</strong> : ' . htmlspecialchars($donnees['date_creation']) . " <br> " . htmlspecialchars($donnees['content']) .  '</p></div>' ;
                 ?>
                
                 

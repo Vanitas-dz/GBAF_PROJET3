@@ -41,7 +41,9 @@ body
 
 }
 textarea{
-    width: 90%;
+    width: 99%;
+    height: 50px;
+    
 }
 .comments{
     
@@ -58,6 +60,7 @@ textarea{
     
 
 }
+
 @media screen and (max-device-width :768px){
 
     .acteur{
