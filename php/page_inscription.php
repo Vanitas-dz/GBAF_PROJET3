@@ -108,7 +108,7 @@ if(isset($_POST['forminscription'])) // declarer la variable valider
         <hr>
         <h1>Bienvenue </h1>
         <h3>Inscrivez-vous</h3>
-        <form action="" method="POST" >
+        <form action="#" method="POST" >
             <table>
                 
             <tr>
@@ -188,6 +188,7 @@ if(isset($_POST['forminscription'])) // declarer la variable valider
                         <option>Le nom de votre superhero préféres ?</option>
                         <option>Le nom de votre Pays ?</option>
                         <option>Le nom de votre professeur préféré ? ?</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>

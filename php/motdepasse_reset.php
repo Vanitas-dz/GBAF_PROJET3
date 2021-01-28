@@ -74,7 +74,7 @@ if (isset($_POST['newpassword']) AND !empty($_POST['newpassword']) AND  isset($_
             <?php
             if (!isset($question)) {
             ?>  
-                <form action="" method="POST">
+                <form action="#" method="POST">
                     <label>Entrée votre username : <input type="text" name="username"/></label>
                     <input type="submit" name ="valider" value="Valider">
                 </form>
@@ -88,7 +88,7 @@ if (isset($_POST['newpassword']) AND !empty($_POST['newpassword']) AND  isset($_
             if (isset($question) && !isset($reponsetrue)) {
             ?>
             <p><?php echo $question;?></p>
-                <form action="" method="POST">
+                <form action="#" method="POST">
                     <label>Entrée reponse : <input type="text" name="reponse"/></label>
                     <input type="hidden" name="username" value="<?php echo $username ?>">
                     <input type="submit" name ="valider" value="Valider">
@@ -102,7 +102,7 @@ if (isset($_POST['newpassword']) AND !empty($_POST['newpassword']) AND  isset($_
             <?php
             if (isset($reponsetrue)) {
             ?>
-            <form action="" method="POST">
+            <form action="#" method="POST">
                 <table>
                     <tr>
                         <td>

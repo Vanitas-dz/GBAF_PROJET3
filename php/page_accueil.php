@@ -10,7 +10,7 @@
     ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
     <body>
         <header><?php include('header_gbaf.php')  ?></header>
         <div class= bloc_page>
-        <p class =img><img src='../img/logo_gbaf'/></p>
+        <p class =img><img src='../img/logo_gbaf' alt='logo gbaf'/></p>
         <h1> le Groupement Banque-Assurance Français </h1> 
         <p>Le Groupement Banque Assurance Français (GBAF) est une fédération représentant les 6 grands groupes français : </p>
         <div class=liste_ul>
@@ -51,7 +51,7 @@
         ?>
         <div class='forma_co' >
         <h2><?php echo $acteur['titre'];?></h2>
-        <img src="<?php echo $acteur['image'];?>" />
+        <img src="<?php echo $acteur['image'];?>" alt ="image acteur" />
         <p><?php echo $acteur['contenu'];?></p>
         <div class="lien">
         <p class =a1><a href =<?php echo "page_acteur.php?id=" .  $acteur['id']; ?>>Afficher la suite</a></p>

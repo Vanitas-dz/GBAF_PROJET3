@@ -95,7 +95,7 @@ if(isset($_SESSION['id'])) // savoir si une variable existe
 
  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -108,7 +108,7 @@ if(isset($_SESSION['id'])) // savoir si une variable existe
         <img src ="../img/gbaf.png" alt='image'>
         
         <h1>Edition du profil</h1>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="#" method="POST" enctype="multipart/form-data">
         <table>
                 
                     <tr>
@@ -180,6 +180,7 @@ if(isset($_SESSION['id'])) // savoir si une variable existe
                             <option>Le nom de votre superhero préféres ?</option>
                             <option>Le nom de votre Pays ?</option>
                             <option>Le nom de votre professeur préféré ? ?</option>
+                            </select>
                         </td>
                     </tr>
                     <tr>

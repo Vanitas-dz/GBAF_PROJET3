@@ -58,10 +58,11 @@
         <header><?php include('header_gbaf.php')  ?></header>
 
         <!-- afficher données acteur-->
+        <div>
         <div class='forma_co' >
         <div class= 'acteur'>
             <h2><?php echo $acteur['titre'];?></h2>
-            <img src="<?php echo $acteur['image'];?>" />
+            <img src="<?php echo $acteur['image'];?>" alt ="image acteur" />
             <p><?php echo $acteur['contenu'];?></p>
 
             <!-- affichage like/dislike des acteurs-->
@@ -69,10 +70,10 @@
             <a href="vote.php?t=2&id=<?php echo $_GET['id']; ?>"> <i class="fas fa-thumbs-down" style="color:red;"></i> (<?php echo $dislike[0]; ?>) </a>
             
         </div>
-        <div>
+        </div>
         <h1>commentaires</h1>
         <div class= comments>
-            <form action="" method='POST'>
+            <form action="#" method='POST'>
                 <textarea name="content" placeholder="Votre commentaire" ></textarea>
                 <br>
                 <input type="submit" name="submit" value="Envoyer">
@@ -87,8 +88,7 @@
                 INNER JOIN membres
                 ON commentaire.id_user = membres.id_user
                 WHERE id_acteurs= ? 
-                ORDER BY id 
-                DESC LIMIT 0, 10');
+                ORDER BY id ');
                 
                 $rep=$reponse->execute(array($_GET['id'],));
     
