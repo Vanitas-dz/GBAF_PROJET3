@@ -8,7 +8,7 @@
      
     
     ?>
-
+<?php include('header_gbaf.php')  ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -21,7 +21,7 @@
 
 
     <body>
-        <header><?php include('header_gbaf.php')  ?></header>
+        
         <div class= bloc_page>
         <p class =img><img src='../img/logo_gbaf' alt='logo gbaf'/></p>
         <h1> le Groupement Banque-Assurance Français </h1> 
@@ -63,6 +63,7 @@
         
 
     </div>
-    <?php include('footer_gbaf.php')  ?>         
+           
     </body>
 </html>
+<?php include('footer_gbaf.php')  ?>  
